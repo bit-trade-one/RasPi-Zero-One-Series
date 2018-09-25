@@ -17,4 +17,10 @@
  - [ADRSZRU リレー回路](http://bit-trade-one.co.jp/product/module/adrszru)
  - [ADRSZSW 照光スイッチ](http://bit-trade-one.co.jp/product/module/adrszsw)
 
+第三弾(2018年9月21日発売)
+ - [ADRSZGR 9軸センサ](http://bit-trade-one.co.jp/adrszgr)
+ - [ADRSZIRS 赤外線リモコン](http://bit-trade-one.co.jp/adrszirs)
+ - [ADRSZLD OLED](http://bit-trade-one.co.jp/adrszld)
+ - [ADRSZDAC ハイレゾDAC](http://bit-trade-one.co.jp/adrszdac)
+
 今後、さらにラインナップを充実させる予定です。
