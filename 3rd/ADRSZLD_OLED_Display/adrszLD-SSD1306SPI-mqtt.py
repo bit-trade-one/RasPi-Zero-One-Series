@@ -73,26 +73,25 @@ def on_message(mqttc, obj, msg):
     
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
     #print(str(msg.payload))
-    r = (str(msg.payload))
+    r = msg.payload.decode()
     print(r)
     #r4 = 'init  '
     #print(gyou4)
     gyou4 = gyou3
     gyou3 = gyou2
     gyou2 = gyou1
-    r0=r.replace("b'","")
-    r0=r0.replace("'","")
+    r0 = r
     print(r0)
     gyou1 = r0
 
     # 128×64ドットのOLEDオブジェクト
-    disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=spi)
+    # disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=spi)
     # OLEDオブジェクトのスタート
-    disp.begin()
+    # disp.begin()
     # OLEDオブジェクトのバッファークリア
-    disp.clear()
+    # disp.clear()
     # バッファの表示
-    disp.display()
+    # disp.display()
     # Imageオブジェクトの作成
     image = Image.new('1', (OLED_WIDTH, OLED_HEIGHT) ,0)
     # drawオブジェクトの取得
