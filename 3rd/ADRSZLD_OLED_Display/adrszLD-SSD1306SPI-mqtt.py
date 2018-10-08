@@ -5,27 +5,27 @@
 #
 # ファイル名：adrszLD-SSD1306SPI-mqtt.py  python3用
 # バージョン：2018/8/31 v1.0
-#                     
+#
 # ビット・トレード・ワン社提供の ラズハ゜イＺＥＲＯＯＮＥシリーズ
 # ＯＬＥＤ漢字表示基板(型番：ADRSZILD)用のツール
 #　著作権者:(C) 2015 ビット・トレード・ワン社
 #　ライセンス: ADL(Assembly Desk License)
-#  実行方法：読込　./adrszLD-SSD1306SPI-mqtt.py 
+#  実行方法：読込　./adrszLD-SSD1306SPI-mqtt.py
 # 　仕様
 #　　　入力：localhostのＭＱＴＴブローカから、TOPIC：adrszLDで文字列入力
 #           mqttc.connect("localhost", 1883, 60)
 #           mqttc.subscribe("adrszLD",0)
 #
 #　　　出力：ＭＱＴＴで入力した文字列を、自動スクロール４行で表示
-#          
-#           
+#
+#
 #
 
- 
+
 import time
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_SSD1306
- 
+
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
@@ -41,13 +41,13 @@ gyou4 = 'gyou4  '
 # OLEDのサイズ設定
 OLED_WIDTH = 128
 OLED_HEIGHT = 64
- 
+
 # OLEDとSPIバスの設定
 RST = 24
 DC = 23
 SPI_PORT = 0
 SPI_DEVICE = 0
- 
+
 # フォントの設定
 DEFAULT_FONT = '/usr/share/fonts/truetype/fonts-japanese-gothic.ttf'
 #DEFAULT_FONT = '/home/pi/font/misakifont/misaki_gothic.ttf'
@@ -66,11 +66,11 @@ def on_connect(mqttc, obj, flags, rc):
 
 
 def on_message(mqttc, obj, msg):
-    global gyou1 
+    global gyou1
     global gyou2
     global gyou3
-    global gyou4  
-    
+    global gyou4
+
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
     #print(str(msg.payload))
     r = msg.payload.decode()
@@ -103,16 +103,16 @@ def on_message(mqttc, obj, msg):
     draw.text((0,16),gyou2, font=jpfont, fill=1)
     draw.text((0,32),gyou3, font=jpfont, fill=1)
     draw.text((0,48),gyou4, font=jpfont, fill=1)
- 
+
     # imageをOLEDバッファーに書き込む
     disp.image(image)
     # バッファーを表示
     disp.display()
-    #lcd_string(gyou1,LCD_LINE_1)    
-    #lcd_string(gyou2,LCD_LINE_2)    
-    #lcd_string(gyou3,LCD_LINE_3)    
-    #lcd_string(gyou4,LCD_LINE_4)    
-    
+    #lcd_string(gyou1,LCD_LINE_1)
+    #lcd_string(gyou2,LCD_LINE_2)
+    #lcd_string(gyou3,LCD_LINE_3)
+    #lcd_string(gyou4,LCD_LINE_4)
+
 def on_publish(mqttc, obj, mid):
     print("mid: " + str(mid))
     pass
@@ -132,24 +132,24 @@ def on_log(mqttc, obj, level, string):
 
 # SPIオブジェクト
 spi = SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=8000000)
- 
+
 # 128×64ドットのOLEDオブジェクト
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=spi)
- 
+
 # OLEDオブジェクトのスタート
 disp.begin()
- 
+
 # OLEDオブジェクトのバッファークリア
 disp.clear()
 # バッファの表示
 disp.display()
- 
+
 # Imageオブジェクトの作成
 image = Image.new('1', (OLED_WIDTH, OLED_HEIGHT) ,0)
- 
+
 # drawオブジェクトの取得
 draw = ImageDraw.Draw(image)
- 
+
 # TryeTypeフォントオブジェクト
 jpfont = ImageFont.truetype(DEFAULT_FONT, FONT_SIZE, encoding='unic')
 
@@ -171,8 +171,8 @@ mqttc.subscribe("adrszLD",0)
 
 mqttc.loop_start()
 
-   
-   
+
+
 
 
 # In[30]:
@@ -188,7 +188,7 @@ draw.text((0,0),gyou1, font=jpfont, fill=1)
 draw.text((0,16),gyou2, font=jpfont, fill=1)
 draw.text((0,32),gyou3, font=jpfont, fill=1)
 draw.text((0,48),gyou4, font=jpfont, fill=1)
- 
+
 # imageをOLEDバッファーに書き込む
 disp.image(image)
 # バッファーを表示
@@ -208,4 +208,3 @@ if __name__ == '__main__':
   finally:
     # OLEDオブジェクトのバッファークリア
     disp.clear() #lcd_byte(0x01, LCD_CMD)
-      
