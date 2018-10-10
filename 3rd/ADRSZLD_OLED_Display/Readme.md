@@ -33,7 +33,7 @@ adafruitのライブラリをインストールします。
     cd Adafruit_Python_SSD1306/
     sudo python3 setup.py install
     cd
-    git clone https://github.com/eclipse/paho.mqtt.python
+    git clone https://github.com/eclipse/paho.mqtt.python.git
     cd paho.mqtt.python
     sudo python3 setup.py install
     cd
@@ -42,14 +42,16 @@ adafruitのライブラリをインストールします。
 ```
 
 ## 4．サンプルソフト（adrszLD-SSD1306SPI-mqtt.py）をダウンロード
+```sh
+    git clone https://github.com/bit-tradeasPi-Zero-One-Series.git
+    cd RasPi-Zero-One-Series/3rd/ADRSZLD_OLED_Display/
+```
 
 サンプルソフトの仕様は下記  
  - 入力：localhostのMQTTブローカから、TOPIC：adrszLDで文字列入力  
  - 出力：MQTTで入力した文字列を、自動スクロール４行で表示  
-必要により権限を付加  
-    ```sudo chmod 777 *```  
 サンプルソフトを実行、初期表示文字が表示されることを確認、停止はCtrl+C  
-    ```sudo python3 adrszLD-SSD1306SPI-mqtt.py```  
+    ```python3 adrszLD-SSD1306SPI-mqtt.py```  
 
 ## 5．Node-REDのサンプルソフト（adrszLD-node-sample.json）を、Node-REDにコピー
 
