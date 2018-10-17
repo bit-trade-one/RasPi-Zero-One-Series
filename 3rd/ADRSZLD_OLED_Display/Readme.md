@@ -43,7 +43,7 @@ adafruitのライブラリをインストールします。
 
 ## 4．サンプルソフト（adrszLD-SSD1306SPI-mqtt.py）をダウンロード
 ```sh
-    git clone https://github.com/bit-tradeasPi-Zero-One-Series.git
+    git clone https://github.com/bit-trade-one/RasPi-Zero-One-Series.git
     cd RasPi-Zero-One-Series/3rd/ADRSZLD_OLED_Display/
 ```
 
