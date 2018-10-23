@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 #coding: utf-8
 #####!で始まる1行目の記述はShebangスクリプト自体を実行
 #####2行目に、マジックコメントを記述文字エンコーディング
