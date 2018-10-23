@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 #coding: utf-8
-#####!‚ÅŽn‚Ü‚é1s–Ú‚Ì‹Lq‚ÍShebangƒXƒNƒŠƒvƒgŽ©‘Ì‚ðŽÀs
-#####2s–Ú‚ÉAƒ}ƒWƒbƒNƒRƒƒ“ƒg‚ð‹Lq•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO
+#####!ã§å§‹ã¾ã‚‹1è¡Œç›®ã®è¨˜è¿°ã¯Shebangã‚¹ã‚¯ãƒªãƒ—ãƒˆè‡ªä½“ã‚’å®Ÿè¡Œ
+#####2è¡Œç›®ã«ã€ãƒžã‚¸ãƒƒã‚¯ã‚³ãƒ¡ãƒ³ãƒˆã‚’è¨˜è¿°æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°
 #
 #
-# ƒtƒ@ƒCƒ‹–¼FadrszSN_sample.py
-# ƒo[ƒWƒ‡ƒ“F2018/6/20 v1.0  python3—p
+# ãƒ•ã‚¡ã‚¤ãƒ«åï¼šadrszSN_sample.py
+# ãƒãƒ¼ã‚¸ãƒ§ãƒ³ï¼š2018/6/20 v1.0  python3ç”¨
 #          
 #
-# ƒrƒbƒgEƒgƒŒ[ƒhEƒƒ“ŽÐ’ñ‹Ÿ‚ÌzerooneƒVƒŠ[ƒY ƒ\ƒŒƒmƒCƒhƒ‚ƒWƒ…[ƒ‹(Œ^”ÔFADRSZSN)—p‚Ì—á‘èƒvƒƒOƒ‰ƒ€
-#@’˜ìŒ ŽÒ:(C) 2015 ƒrƒbƒgEƒgƒŒ[ƒhEƒƒ“ŽÐ
-#@ƒ‰ƒCƒZƒ“ƒX: ADL(Assembly Desk License)
+# ãƒ“ãƒƒãƒˆãƒ»ãƒˆãƒ¬ãƒ¼ãƒ‰ãƒ»ãƒ¯ãƒ³ç¤¾æä¾›ã®zerooneã‚·ãƒªãƒ¼ã‚º ã‚½ãƒ¬ãƒŽã‚¤ãƒ‰ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«(åž‹ç•ªï¼šADRSZSN)ç”¨ã®ä¾‹é¡Œãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+#ã€€è‘—ä½œæ¨©è€…:(C) 2015 ãƒ“ãƒƒãƒˆãƒ»ãƒˆãƒ¬ãƒ¼ãƒ‰ãƒ»ãƒ¯ãƒ³ç¤¾
+#ã€€ãƒ©ã‚¤ã‚»ãƒ³ã‚¹: ADL(Assembly Desk License)
 #
-#  ŽÀs•û–@F ./adrszSN_sample.py
-#@ŽÀs‚·‚é‚Æ@ƒ\ƒŒƒmƒCƒh‚ª0.5•b‚n‚m‚É‚È‚è2•bŠÔŠu‚ÅŒJ‚è•Ô‚µ‚Ü‚·B
+#  å®Ÿè¡Œæ–¹æ³•ï¼š ./adrszSN_sample.py
+#ã€€å®Ÿè¡Œã™ã‚‹ã¨ã€€ã‚½ãƒ¬ãƒŽã‚¤ãƒ‰ãŒ0.5ç§’ï¼¯ï¼®ã«ãªã‚Š2ç§’é–“éš”ã§ç¹°ã‚Šè¿”ã—ã¾ã™ã€‚
 #  
-#@
+#ã€€
 
 
 port = 4

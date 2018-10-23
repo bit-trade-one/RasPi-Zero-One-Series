@@ -1,30 +1,30 @@
 #!/usr/bin/python3
 #coding: utf-8
-#####!�Ŏn�܂�1�s�ڂ̋L�q��Shebang�X�N���v�g���̂����s
-#####2�s�ڂɁA�}�W�b�N�R�����g���L�q�����G���R�[�f�B���O
+#####!で始まる1行目の記述はShebangスクリプト自体を実行
+#####2行目に、マジックコメントを記述文字エンコーディング
 #
 #
-# �t�@�C�����F/home/pi/zeroone/adrszLX/adrszLX_sample.py
-# �o�[�W�����F2018/6/8 v1.0  python3�p
+# ファイル名：/home/pi/zeroone/adrszLX/adrszLX_sample.py
+# バージョン：2018/6/8 v1.0  python3用
 #          
 #
-# �r�b�g�E�g���[�h�E�����В񋟂�zeroone�V���[�Y ���邳�Z���T���W���[��(�^�ԁFADRSZLX)�p�̗��v���O����
-#�@���쌠��:(C) 2015 �r�b�g�E�g���[�h�E������
-#�@���C�Z���X: ADL(Assembly Desk License)
+# ビット・トレード・ワン社提供のzerooneシリーズ 明るさセンサモジュール(型番：ADRSZLX)用の例題プログラム
+#　著作権者:(C) 2015 ビット・トレード・ワン社
+#　ライセンス: ADL(Assembly Desk License)
 #
-#  ���s���@�F ./adrszLX_sample.py
-#�@���s����Ɓ@�Ɠx�Flumi�@�ߐڋ����Fproxi�@�����L�̂悤�ɏo�͂��܂��B
-#  ���s���ʁ@�@{'lumi': 2555 ,'proxi': 2281}
-#�@�Ɠx�Flumi�@�͑�����x�͈́F10�`16383 Lux
-#�@�@�@�Z���T����̂�鐔�l�́Aambient Light Signal(cts)�l�ł��B
-#�@�@�@���l�́A�f�[�^�V�[�g�ɗ��ΐ��O���t�ŕ\������Ă��܂��B
-#�@�@�@�@�@�@�@���ΐ��O���t�́Aambient Light Signal(cts)�΁AAmbient Light Value(lx)�ł��B
-#�@�@�@�@�@�@�@�O���t���Alx�l�����Z���A���ЂŎ������܂��Ă݂܂����B
-#�@�@�@�@�@�@�@�@�@�@�@�@�@���̏�́A�u����������ƁF1500lux�A�����ƁF750lux���x�ł����B
-#�@�ߐڋ����Fproxi�@���苗���͈�: 1�`200 mm�@�œK�Ȕ͈�: 10�`150 mm�iAdafruit���ׁj
-#�@�@�@���ЂɂĎ��������Ƃ���A10�����`30�������x�ŁA�l��8000�`2500���x�ω����܂���
-#�@�@�@���l�́A�f�[�^�V�[�g�ɑΐ��O���t�ŕ\������Ă���̂ŁA���l�ƁA�����̊��Z�͍���ł�
-#�@�@�@���l��2500�ȏ�Ȃ�30�����ȓ��ɁA���̂�������x�̎g�p�@�ɂȂ�Ǝv���܂��B
+#  実行方法： ./adrszLX_sample.py
+#　実行すると　照度：lumi　近接距離：proxi　を下記のように出力します。
+#  実行結果　　{'lumi': 2555 ,'proxi': 2281}
+#　照度：lumi　は測定光度範囲：10〜16383 Lux
+#　　　センサから採れる数値は、ambient Light Signal(cts)値です。
+#　　　数値は、データシートに両対数グラフで表示されています。
+#　　　　　　　両対数グラフは、ambient Light Signal(cts)対、Ambient Light Value(lx)です。
+#　　　　　　　グラフより、lx値を換算し、弊社で実測しましてみました。
+#　　　　　　　　　　　　　机の上の、蛍光灯をつけると：1500lux、消すと：750lux程度でした。
+#　近接距離：proxi　測定距離範囲: 1〜200 mm　最適な範囲: 10〜150 mm（Adafruit調べ）
+#　　　弊社にて実測したところ、10ｍｍ〜30ｍｍ程度で、値が8000〜2500程度変化しました
+#　　　数値は、データシートに対数グラフで表示されているので、数値と、距離の換算は困難です
+#　　　数値が2500以上なら30ｍｍ以内に、物体がある程度の使用法になると思われます。
 #
 # Distributed with a free-will license.
 # Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
