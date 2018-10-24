@@ -1,4 +1,4 @@
-##!/usr/bin/python3
+#!/usr/bin/env python3
 #coding: utf-8
 #####!で始まる1行目の記述はShebangスクリプト自体を実行
 #####2行目に、マジックコメントを記述文字エンコーディング
@@ -10,7 +10,7 @@
 #
 # ビット・トレード・ワン社提供のzerooneシリーズ BME280センサモジュール(型番：ADRSZBM)用の例題プログラム
 #　著作権者:(C) 2015 ビット・トレード・ワン社
-#　ライセンス: MIT License
+#　ライセンス: ADL(Assembly Desk License)
 #
 #  実行方法： ./adrszBM_sample.py
 #　実行すると　bme280センサの入力値をコンソールに出力します。

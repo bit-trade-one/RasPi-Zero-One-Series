@@ -3,7 +3,7 @@
 
 ビット・トレード・ワン社提供のzerooneシリーズ BME280センサモジュール(型番：ADRSZBM)用の例題プログラム  
 著作権者:(C) 2015 ビット・トレード・ワン社  
-ライセンス: MIT License  
+ライセンス: ADL(Assembly Desk License)  
 
 実行方法： ./adrszBM_sample.py  
 実行すると　bme280センサの入力値をコンソールに出力します。  

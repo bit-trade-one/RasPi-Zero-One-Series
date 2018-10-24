@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 # - coding: utf-8 -
 #
 # ビット・トレード・ワン社提供のzerooneシリーズ 照光スイッチ(型番：ADRSZSW)用の例題プログラム

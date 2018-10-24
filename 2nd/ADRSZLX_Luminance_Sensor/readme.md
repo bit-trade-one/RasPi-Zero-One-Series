@@ -4,7 +4,7 @@
 
 ビット・トレード・ワン社提供のzerooneシリーズ 明るさセンサモジュール(型番：ADRSZLX)用の例題プログラム  
 著作権者:(C) 2015 ビット・トレード・ワン社  
-ライセンス: MIT License  
+ライセンス: ADL(Assembly Desk License)  
 
 実行方法： ./adrszLX_sample.py  
 実行すると　照度：lumi　近接距離：proxi　を下記のように出力します。  

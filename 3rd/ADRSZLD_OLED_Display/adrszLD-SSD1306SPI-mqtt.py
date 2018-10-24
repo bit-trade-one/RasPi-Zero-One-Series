@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # coding: utf-8
 #####!で始まる1行目の記述はShebangスクリプト自体を実行
 #####2行目に、マジックコメントを記述文字エンコーディング
@@ -6,7 +6,7 @@
 # ファイル名：adrszLD-SSD1306SPI-mqtt.py  python3用
 # バージョン：2018/8/31 v1.0
 #                     
-# ビット・トレード・ワン社提供の ラズハ゜イＺＥＲＯＯＮＥシリーズ
+# ビット・トレード・ワン社提供の ラズパイＺＥＲＯＯＮＥシリーズ
 # ＯＬＥＤ漢字表示基板(型番：ADRSZILD)用のツール
 #　著作権者:(C) 2015 ビット・トレード・ワン社
 #　ライセンス: ADL(Assembly Desk License)
@@ -183,7 +183,7 @@ mqttc.loop_start()
 # 文字をimageに描く
 gyou1 = 'こんにちは'
 gyou2 = 'ビット・トレード・ワン'
-gyou3 = 'ラズハ゜イzerooneシリーズ '
+gyou3 = 'ラズパイzerooneシリーズ '
 gyou4 = 'adrszLD 漢字ボード  '
 draw.text((0,0),gyou1, font=jpfont, fill=1)
 draw.text((0,16),gyou2, font=jpfont, fill=1)
