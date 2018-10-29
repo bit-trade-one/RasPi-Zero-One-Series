@@ -31,24 +31,22 @@ from PIL import ImageFont
 import paho.mqtt.client as mqtt
 
 # MQTTの設定
-MQTT_HOST = 'localhost'
-MQTT_TOPIC = 'adrszLD'
-
+MQTT_HOST   =  'localhost'
+MQTT_TOPIC  =  'adrszLD'
 
 # OLEDのサイズ設定
-OLED_WIDTH = 128
-OLED_HEIGHT = 64
+OLED_WIDTH   =  128
+OLED_HEIGHT  =  64
 
 # OLEDとSPIバスの設定
-RST = 24
-DC = 23
-SPI_PORT = 0
-SPI_DEVICE = 0
+RST         =  24
+DC          =  23
+SPI_PORT    =  0
+SPI_DEVICE  =  0
 
 # フォントの設定
-DEFAULT_FONT = '/usr/share/fonts/truetype/fonts-japanese-gothic.ttf'
-FONT_SIZE = 14
-
+DEFAULT_FONT  =  '/usr/share/fonts/truetype/fonts-japanese-gothic.ttf'
+FONT_SIZE     =  14
 
 # TryeTypeフォントオブジェクト
 jpfont = ImageFont.truetype(DEFAULT_FONT, FONT_SIZE, encoding='unic')
@@ -66,40 +64,17 @@ disp.clear()
 # バッファの表示
 disp.display()
 
-# Imageオブジェクトの作成
-image = Image.new('1', (OLED_WIDTH, OLED_HEIGHT) ,0)
-# drawオブジェクトの取得
-draw = ImageDraw.Draw(image)
 # 文字列の設定
 gyou = [ 'こんにちは',
          'ビット・トレード・ワン',
          'ラズパイzerooneシリーズ ',
          'adrszLD 漢字ボード  ' ]
-# 文字をimageに描く
-for i, j in enumerate(gyou):
-    draw.text((0,16 * i), j, font=jpfont, fill=1)
-# imageをOLEDバッファーに書き込む
-disp.image(image)
-# バッファーを表示
-disp.display()
 
-
-## MQTT
-
-def on_connect(mqttc, obj, flags, rc):
-    print("rc: " + str(rc))
-
-def on_message(mqttc, obj, msg):
+def draw_gyou():
     global gyou
     global jpfont
     global disp
-
-    print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
-    m = msg.payload.decode()
-    print(m)
-
-    gyou = ([m] + gyou)[:4]
-
+    
     # Imageオブジェクトの作成
     image = Image.new('1', (OLED_WIDTH, OLED_HEIGHT) ,0)
     # drawオブジェクトの取得
@@ -112,12 +87,31 @@ def on_message(mqttc, obj, msg):
     # バッファーを表示
     disp.display()
 
+
+## MQTT
+
+def on_connect(mqttc, obj, flags, rc):
+    print("rc: " + str(rc))
+
+def on_message(mqttc, obj, msg):
+    global gyou
+
+    print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+    m = msg.payload.decode()
+    print(m)
+
+    gyou = ([m] + gyou)[:4]
+
+    draw_gyou()
+
 def on_subscribe(mqttc, obj, mid, granted_qos):
     print("Subscribed: " + str(mid) + " " + str(granted_qos))
 
 def on_log(mqttc, obj, level, string):
     print(string)
 
+
+draw_gyou()
 
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
