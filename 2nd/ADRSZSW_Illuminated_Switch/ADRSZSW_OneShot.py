@@ -2,8 +2,8 @@
 # - coding: utf-8 -
 #
 # ビット・トレード・ワン社提供のzerooneシリーズ 照光スイッチ(型番：ADRSZSW)用の例題プログラム
-#　著作権者:(C) 2015 ビット・トレード・ワン社
-#　ライセンス: ADL(Assembly Desk License)
+# 　著作権者:(C) 2015 ビット・トレード・ワン社
+# 　ライセンス: ADL(Assembly Desk License)
 #
 #  実行方法： ./ADRSZSW_OneShot.py
 #  実行すると、スイッチを押している間だけランプが光ります、
@@ -22,39 +22,40 @@ Switch_Flag = True
 
 
 def switch():
-	ON_Count = 0
-	OFF_Count = 0
-	global Switch_Flag
-	while True:
-		if GPIO.input(SW):
-			OFF_Count = 0
-			ON_Count +=1
-		else:
-			ON_Count = 0
-			OFF_Count += 1
+    ON_Count = 0
+    OFF_Count = 0
+    global Switch_Flag
+    while True:
+        if GPIO.input(SW):
+            OFF_Count = 0
+            ON_Count += 1
+        else:
+            ON_Count = 0
+            OFF_Count += 1
 
-		if ON_Count == 10:
-			Switch_Flag = False
-			i2c.write_byte_data(ADDR,0x01,255)
+        if ON_Count == 10:
+            Switch_Flag = False
+            i2c.write_byte_data(ADDR, 0x01, 255)
 
-		if OFF_Count == 10:
-			Switch_Flag = True
-			i2c.write_byte_data(ADDR,0x01,0)
-		sleep(0.001)
+        if OFF_Count == 10:
+            Switch_Flag = True
+            i2c.write_byte_data(ADDR, 0x01, 0)
+        sleep(0.001)
+
 
 if __name__ == "__main__":
-	signal.signal(signal.SIGINT,signal.SIG_DFL)
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-	i2c = smbus.SMBus(1)
-	i2c.write_byte_data(ADDR,0x01,0)
+    i2c = smbus.SMBus(1)
+    i2c.write_byte_data(ADDR, 0x01, 0)
 
-	GPIO.setmode(GPIO.BCM)
-	GPIO.setup(SW,GPIO.IN)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(SW, GPIO.IN)
 
-	switch_thread = threading.Thread(target=switch)
-	switch_thread.start()
+    switch_thread = threading.Thread(target=switch)
+    switch_thread.start()
 
-	while True:
-		sleep(1)
-		print(i2c.read_byte_data(ADDR,0x00))
-		print(Switch_Flag)
+    while True:
+        sleep(1)
+        print(i2c.read_byte_data(ADDR, 0x00))
+        print(Switch_Flag)

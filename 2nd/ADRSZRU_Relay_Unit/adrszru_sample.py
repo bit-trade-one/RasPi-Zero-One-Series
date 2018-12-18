@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#coding: utf-8
+# coding: utf-8
 #
 # ファイル名：adrszru_sample.py
 # バージョン：2018/07/30 v1.0  python3用
@@ -14,6 +14,7 @@
 port = 4
 import RPi.GPIO as GPIO
 import time
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(port, GPIO.OUT)

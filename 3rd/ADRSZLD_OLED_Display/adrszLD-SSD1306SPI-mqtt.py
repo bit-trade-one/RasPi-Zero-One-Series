@@ -11,7 +11,7 @@
 #
 #  実行方法：python3 ./adrszLD-SSD1306SPI-mqtt.py
 # 　仕様
-#　　　入力：localhostのＭＱＴＴブローカから、TOPIC：adrszLDで文字列入力
+# 　　　入力：localhostのＭＱＴＴブローカから、TOPIC：adrszLDで文字列入力
 #           mqttc.connect("localhost", 1883, 60)
 #           mqttc.subscribe("adrszLD",0)
 #
@@ -19,6 +19,7 @@
 #
 # 利用例：
 #  mosquitto_pub -h localhost -t adrszLD -m "メッセージ"
+#
 #
 
 import Adafruit_GPIO.SPI as SPI
@@ -55,7 +56,6 @@ spi = SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=8000000)
 # 128×64ドットのOLEDオブジェクト
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=spi)
 
-
 # OLEDオブジェクトのスタート
 disp.begin()
 
@@ -74,9 +74,9 @@ def draw_gyou():
     global gyou
     global jpfont
     global disp
-    
+
     # Imageオブジェクトの作成
-    image = Image.new('1', (OLED_WIDTH, OLED_HEIGHT) ,0)
+    image = Image.new("1", (OLED_WIDTH, OLED_HEIGHT), 0)
     # drawオブジェクトの取得
     draw = ImageDraw.Draw(image)
     # 文字をimageに描く
@@ -87,7 +87,6 @@ def draw_gyou():
     # バッファーを表示
     disp.display()
 
-
 ## MQTT
 
 def on_connect(mqttc, obj, flags, rc):
@@ -95,7 +94,6 @@ def on_connect(mqttc, obj, flags, rc):
 
 def on_message(mqttc, obj, msg):
     global gyou
-
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
     m = msg.payload.decode()
     print(m)
@@ -110,13 +108,13 @@ def on_subscribe(mqttc, obj, mid, granted_qos):
 def on_log(mqttc, obj, level, string):
     print(string)
 
-
 draw_gyou()
 
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
 mqttc.on_connect = on_connect
 mqttc.on_subscribe = on_subscribe
+
 # mqttc.on_log = on_log        # Uncomment to enable debug messages
 
 mqttc.connect(MQTT_HOST, 1883, 60)
