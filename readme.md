@@ -4,7 +4,7 @@
 [「ゼロワン」シリーズ　TOPページはこちら](http://bit-trade-one.co.jp/product/module/zeroone01top/)  
 2018年12月21日現在、以下の製品を発売しております。
 
-|第1弾</br>(2018年7月6日発売)||第2弾</br>(2018年8月24日発売)||第3弾</br>(2018年9月21日発売)||第4弾</br>(2018年12月21日発売)||
+|第1弾</br>(18/7/6 発売)||第2弾</br>(18/8/24 発売)||第3弾</br>(18/9/21 発売)||第4弾</br>(18/12/21 発売)||
 |-|-|-|-|-|-|-|-|
 |ADRSZBM</br>温湿度・気圧センサ|[Web](http://bit-trade-one.co.jp/product/module/adrszbm)</br>[GitHub](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/1st/ADRSZBM_Enviroment_Sensor)|ADRSZIRR</br>赤外線受信|[Web](http://bit-trade-one.co.jp/product/module/adrszirr)</br>[GitHub](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/2nd/ADRSZIRR_IR_Receiver)|ADRSZGR</br>9軸センサ|[Web](http://bit-trade-one.co.jp/adrszgr)</br>[GitHub](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/3rd/ADRSZGR_9-Axis_Gyro)|ADRSZHB</br>USBハブ|[Web](http://bit-trade-one.co.jp/adrszhb/)|
 |ADRSZPY</br>焦電型赤外線センサ|[Web](http://bit-trade-one.co.jp/product/module/adrszpy)</br>[GitHub](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/1st/ADRSZPY_Pyroelectric_Sensor)|ADRSZLX</br>明るさセンサ|[Web](http://bit-trade-one.co.jp/product/module/adrszlx)</br>[GitHub](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/2nd/ADRSZLX_Luminance_Sensor)|ADRSZIRS</br>赤外線リモコン|[Web](http://bit-trade-one.co.jp/adrszirs)</br>[GitHub](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/3rd/ADRSZIRS_IR_Sender)|ADRSZGP</br>GPSモジュール||
