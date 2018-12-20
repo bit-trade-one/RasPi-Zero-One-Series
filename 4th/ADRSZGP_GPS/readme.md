@@ -29,7 +29,7 @@ sudo raspi-config
 
 ## サンプル：Node-REDによる情報処理
 
-![](Node-RED.png)  
+![node-red](https://user-images.githubusercontent.com/42862131/50271026-d0f6d480-0476-11e9-9926-ad7a26cf3d82.PNG) 
 [サンプルはこちら](Node-RED.json)  
 GPSモジュールより送られてくる情報は```NMEAフォーマット```の文字列で送られてきます。  
 このサンプルではNode-REDを使い、"$GPGGA"より始まる文字列を解析し緯度・経度を取り出します。  
