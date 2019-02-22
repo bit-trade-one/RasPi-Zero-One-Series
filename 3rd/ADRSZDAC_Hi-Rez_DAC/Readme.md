@@ -1,5 +1,7 @@
 # ADRSZDAC ラズパイハイレゾDAC説明書
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszdac)*
+
 ### 初期セットアップ方法
 
  1. /boot/config.txtに、以下の行を追記します。  

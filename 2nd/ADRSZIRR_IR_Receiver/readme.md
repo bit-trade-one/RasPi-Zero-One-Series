@@ -1,5 +1,7 @@
 # ADRSZIRR ゼロワンシリーズ赤外線受信ボードの使い方
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszirr)*
+
 ## 1.lircの設定
 
 最初に、Linuxの純正赤外線受信ライブラリ”lirc”をインストールします。  

@@ -1,5 +1,7 @@
 # adrszCM　のインストール
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszcm/)*
+
 本基板は、インターフェイスがadafluitのAdafruit_Python_ADS1x15モジュールと互換性があります。  
 adafruitのライブラリをインストールします。  
 下記に、基本的な手順を示します。  

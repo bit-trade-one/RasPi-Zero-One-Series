@@ -1,4 +1,7 @@
 # adrszru_sample.py  
+
+### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszru)*
+
 バージョン：2018/07/30 v1.0  python3用  
 
 ビット・トレード・ワン社提供の「ゼロワン」シリーズ リレー基板(型番：ADRSZRU)用の例題プログラム  

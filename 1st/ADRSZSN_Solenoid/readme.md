@@ -1,4 +1,7 @@
 # adrszSN_sample.py
+
+### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszsn)*
+
 バージョン：2018/6/20 v1.0  python3用  
 
 ビット・トレード・ワン社提供のzerooneシリーズ ソレノイドモジュール(型番：ADRSZSN)用の例題プログラム  

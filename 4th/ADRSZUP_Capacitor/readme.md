@@ -1,5 +1,7 @@
 # ADRSZUP ゼロワン 電源保持基板　説明書
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszup/)*
+
 ## 本製品について
 
 本製品はRaspberry Pi Zeroに装着し、通常時に電荷を蓄積することで  
