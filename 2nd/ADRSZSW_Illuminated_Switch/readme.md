@@ -1,5 +1,7 @@
 # ADRSZSW_OneShot.py , ADRSZSW_Trig.py
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszsw)*
+
 ビット・トレード・ワン社提供のzerooneシリーズ 照光スイッチ(型番：ADRSZSW)用の例題プログラム
 著作権者:(C) 2015 ビット・トレード・ワン社
 ライセンス: ADL(Assembly Desk License)

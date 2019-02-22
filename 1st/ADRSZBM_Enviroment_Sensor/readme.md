@@ -1,6 +1,8 @@
 # adrszBM_sample.py
 バージョン：2018/6/20 v1.0  python3用
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszbm)*
+
 ビット・トレード・ワン社提供のzerooneシリーズ BME280センサモジュール(型番：ADRSZBM)用の例題プログラム  
 著作権者:(C) 2015 ビット・トレード・ワン社  
 ライセンス: ADL(Assembly Desk License)  

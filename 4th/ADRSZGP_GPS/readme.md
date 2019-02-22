@@ -1,5 +1,7 @@
 # ADRSZGP 動作環境インストール
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszgp/)*
+
 adrszGP基板は、GPSモジュールが実装され、ラズハ゜イｚｅｒｏとは、ＧＰＩＯ　シリアルで接続されています。  
 
 

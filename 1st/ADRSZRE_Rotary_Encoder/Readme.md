@@ -1,5 +1,7 @@
 # ADRSZRE ロータリーエンコーダ拡張基板 サンプルPythonスクリプト取り扱い説明書  
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszre)*
+
 ## サンプルスクリプト ADRSZRE_Sample.pyについて  
 
 このスクリプトは、ADRSZRE ゼロワンエンコーダ拡張基板専用 エンコーダ値読み取りサンプルプログラムです。  

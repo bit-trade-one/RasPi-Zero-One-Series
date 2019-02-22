@@ -1,5 +1,8 @@
 
 # adrszLX_sample.py  
+
+### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszlx)*
+
 バージョン：2018/6/8 v1.0  python3用  
 
 ビット・トレード・ワン社提供のzerooneシリーズ 明るさセンサモジュール(型番：ADRSZLX)用の例題プログラム  

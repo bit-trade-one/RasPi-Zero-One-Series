@@ -1,5 +1,7 @@
 # adrszＨＢ　USB-HUB　の使い方
 
+### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszhb/)*
+
 本基板は、usb2.0のｈｕｂと互換性があります。  
 
 下記に、基本的な使い方を示します。  
