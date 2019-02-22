@@ -1,37 +1,38 @@
-# ADRSZGP ゼロワン GPS拡張基板 取り扱い説明書
+# ADRSZGP 動作環境インストール
 
-## 本製品について
+adrszGP基板は、GPSモジュールが実装され、ラズハ゜イｚｅｒｏとは、ＧＰＩＯ　シリアルで接続されています。  
 
-本製品はGPSモジュールを搭載するRaspberry Pi Zero用pHAT基板です。
 
-## 使い方
+下記に、基本的なインストール手順を示します。  
 
-本製品を利用するためにはRaspberry Pi ZeroのGPIO上にあるUART通信端子の有効化が必要です。
-
-### GUI（デスクトップ環境）の場合
-
-スタートメニュー->「設定」->「Raspberry Piの設定」を開き、
-「インターフェイス」のタブから
-
-- Serial Port: 有効
-- Serial Console: 無効
-
-としてください。
-
-### CUI（コンソール環境）の場合
-
+## 1. os関係のインストール確認
+　ＯＳは、下記で動作確認、日本語環境、Ｉ２Ｃ、ＳＰＩ、ｓｅｒｉａｌインターフェイス許可  
+　　　　2018-10-09-raspbian-stretch.zip  
+　2018年10月時点で、最新版にして、基本モジュールをインストール  
 ```sh
-sudo raspi-config 
+    sudo apt-get update  
+    sudo apt-get install python-pip python3-pip  
+    #raspberry Pi の設定＞インターフェイスで下記を設定  
+    Serial Port 有効  
+    Serial Console 無効  
 ```
 
-より、```5 Interfacing Options```ｰ>```P6 Serial```を選択し、```Would you like a login shell ~~~```と表示されたら "いいえ" を選択してください。  
-次に```Would you like the serial port ~~~```と表示されたら "はい" を選択してください。
+## 2. node-redの最新版をインストール
 
-## サンプル：Node-REDによる情報処理
+```sh
+    bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)  
+    #node-redを自動起動  
+    sudo systemctl enable nodered.service  
+    sudo reboot  
+    #node-redにMQTTブローカをインストール  
+    #パレットの管理→ノードを追加→moscaを検索→ノードを追加  
+    sudo reboot  
+```
 
-![node-red](https://user-images.githubusercontent.com/42862131/50271026-d0f6d480-0476-11e9-9926-ad7a26cf3d82.PNG) 
-[サンプルはこちら](Node-RED.json)  
-GPSモジュールより送られてくる情報は```NMEAフォーマット```の文字列で送られてきます。  
-このサンプルではNode-REDを使い、"$GPGGA"より始まる文字列を解析し緯度・経度を取り出します。  
-一番右側のdebugノードに[ "緯度","経度" ]の配列で位置情報が出力されます。  
-※NMEAフォーマットについては関連する情報をご参照ください。
+## 3. ＮＯＤＥ－ＲＥＤのサンプルソフト（node-red-gps-serial-sample.json）を、ＮＯＤＥ－０ＲＥＤにコピー
+サンプルソフトの仕様は下記  
+#　　　入力：gpsモジュールから、シリアルでＧＰＳデータを入力  
+#　　　出力：１分おきにＧＰＳデータをＣＳＶファイルに出力  
+
+## EX. ＣＳＶファイルは、google　mapに張り付けることができます。  
+　　参考ＵＲＬ：　https://www.google.com/mymaps/
