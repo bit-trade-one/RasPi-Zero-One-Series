@@ -1,13 +1,13 @@
 # ゼロワンシリーズ　ADRSZCS カラーセンサ仕様手順書
 
 この基板の仕様は以下のとおりです。  
-|||
-|-|-|
-|カラーセンサ|ZC-CLS381RGB|
-|測定データ|Red、Green、Blue、IR|
-|分解能|16　to　20　bit|
-|測定モード|ALS：周囲光、CS：カラー|
-|使用GPIO|2(SDA),3(SCL),6(SHUTDOWN),</br>18(LED),23(INT)|
+|||  
+|-|-|  
+|カラーセンサ|ZC-CLS381RGB|  
+|測定データ|Red、Green、Blue、IR|  
+|分解能|16　to　20　bit|  
+|測定モード|ALS：周囲光、CS：カラー|  
+|使用GPIO|2(SDA),3(SCL),6(SHUTDOWN),</br>18(LED),23(INT)|  
 
 下記に、基本的な手順を示します。  
 
