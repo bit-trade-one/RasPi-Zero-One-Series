@@ -30,7 +30,7 @@ ADRSZOD基板は、GPSモジュールが実装され、ラズパイzeroとは、
     sudo reboot  
 ```
 
-## 3.サンプルソフト（adrszAR-sample.py）をダウンロード
+## 3.サンプルソフト（adrszOD-sample.py）をダウンロード
 サンプルソフトの仕様は下記
 
 ```sh
@@ -42,7 +42,7 @@ ADRSZOD基板は、GPSモジュールが実装され、ラズパイzeroとは、
     sudo python3 adrszAR-sample.py  
 ```
 
-## 4．サンプルソフト（adrszAR_sample.json）をnode-redに張り付け
+## 4．サンプルソフト（adrszOD_sample.json）をnode-redに張り付け
 
 
 サンプルソフトの仕様は下記
