@@ -92,3 +92,8 @@ sudo python /home/pi/zeroone/5_1adrszCS/adrszCS_CSmode_sample.py
 
 - 上記3種のpythonのサンプルソフトを、ＮＯＤＥ－ＲＥＤから起動
 - dashboardにグラフ表示
+
+## 測定用白色LEDについて
+
+自動では点灯しないためGPIO18を制御して点灯をコントロールしてみてください。
+Hiで点灯、Loで消灯、PWMにて調光制御が可能です。
