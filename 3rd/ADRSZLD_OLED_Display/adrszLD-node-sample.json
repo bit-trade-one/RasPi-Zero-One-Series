@@ -1,0 +1,655 @@
+[
+    {
+        "id": "ee2f202e.cb3f4",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "x": 250,
+        "y": 320,
+        "wires": [
+            [
+                "b1d07f8c.072bf"
+            ]
+        ]
+    },
+    {
+        "id": "b1d07f8c.072bf",
+        "type": "exec",
+        "z": "ce7111bb.10b11",
+        "command": "python3 /home/pi/zeroone/3_4adrszLD/adrszLD-SSD1306SPI-mqtt.py",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "adrszLD-SSD1306SPI-mqtt.py",
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "740e4d68.251114"
+            ],
+            [
+                "740e4d68.251114"
+            ],
+            [
+                "740e4d68.251114"
+            ]
+        ]
+    },
+    {
+        "id": "740e4d68.251114",
+        "type": "debug",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 800.0000457763672,
+        "y": 271.00001525878906,
+        "wires": []
+    },
+    {
+        "id": "8e1303a5.ea49",
+        "type": "mqtt out",
+        "z": "ce7111bb.10b11",
+        "name": "adrszLD",
+        "topic": "adrszLD",
+        "qos": "",
+        "retain": "",
+        "broker": "2781dde.7400022",
+        "x": 1020,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "633f8b75.8da124",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "test-adrszLD LCD",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 830.0000457763672,
+        "y": 471.00001525878906,
+        "wires": [
+            [
+                "8e1303a5.ea49"
+            ]
+        ]
+    },
+    {
+        "id": "cd98f5f3.c1d618",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 640,
+        "y": 380,
+        "wires": [
+            [
+                "fd806712.9cbda8"
+            ]
+        ]
+    },
+    {
+        "id": "fd806712.9cbda8",
+        "type": "function",
+        "z": "ce7111bb.10b11",
+        "name": "時刻メッセージ",
+        "func": "//検索期間の設定（現在の日時からspanで指定した期間を検索）\nvar getSearchText = function ( nowdate , span ) {\nvar startdate = new Date( nowdate.getFullYear() , nowdate.getMonth() , nowdate.getDate() ,\nnowdate.getHours() , nowdate.getMinutes() - span , nowdate.getSeconds() );\nreturn getTimestamp( startdate ) + \" TO \" + getTimestamp( nowdate );\n};\n//タイムスタンプの生成\nvar getTimestamp = function ( date ) {\nvar yyyy = date.getFullYear();\nmm = ('0' + (date.getMonth() + 1)).slice(-2);\ndd = ('0' + date.getDate()).slice(-2);\nh = ('0' + date.getHours()).slice(-2);\nm = ('0' + date.getMinutes()).slice(-2);\ns = ('0' + date.getSeconds()).slice(-2);\nts = yyyy + '-' + mm + '-' + dd + 'T' + h + ':' + m + ':' + s + 'Z';\nreturn ts;\n};\n//表示用日付の生成\nvar getDisplayDatetime = function ( date ) {\ndate.setTime(date.getTime() + (1000 * 60 * 60 * 9 ));    //1000*60秒*60分*9時間\nvar yyyy = date.getFullYear();\nmm = ('0' + (date.getMonth() + 1)).slice(-2);\ndd = ('0' + date.getDate()).slice(-2);\nh = ('0' + date.getHours()).slice(-2);\nts = yyyy + '年' + mm + '月' + dd + '日' + h + ':' + m + ':' + s;\nreturn ts;\n};\nvar span = 60;\nvar nowdate = new Date();\n//msg.payload = getSearchText( nowdate , span );\nmsg.payload = getTimestamp( nowdate );\n//グローバル変数に日時を格納\ncontext.global.date = getDisplayDatetime( nowdate );\ncontext.global.span = span;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 840,
+        "y": 380,
+        "wires": [
+            [
+                "328e67f6.0c9158",
+                "8e1303a5.ea49"
+            ]
+        ]
+    },
+    {
+        "id": "328e67f6.0c9158",
+        "type": "debug",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1040.0000457763672,
+        "y": 371.00001525878906,
+        "wires": []
+    },
+    {
+        "id": "22e339e0.e7f3b6",
+        "type": "function",
+        "z": "ce7111bb.10b11",
+        "name": " \"試験開始\"",
+        "func": "msg.payload = \"test start\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 830.0000457763672,
+        "y": 431.00001525878906,
+        "wires": [
+            [
+                "8e1303a5.ea49"
+            ]
+        ]
+    },
+    {
+        "id": "fcb0ecd8.9bf2a",
+        "type": "debug",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 400.0000457763672,
+        "y": 191.00001525878906,
+        "wires": []
+    },
+    {
+        "id": "d55f216e.aefb5",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "test20180831",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190.0000457763672,
+        "y": 251.00001525878906,
+        "wires": [
+            [
+                "bbd04642.8b40b8"
+            ]
+        ]
+    },
+    {
+        "id": "bbd04642.8b40b8",
+        "type": "mqtt out",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "adrszLD",
+        "qos": "0",
+        "retain": "",
+        "broker": "cc7666e8.0ee838",
+        "x": 430.0000457763672,
+        "y": 251.00001525878906,
+        "wires": []
+    },
+    {
+        "id": "6f7afd29.5f01f4",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 620.0000457763672,
+        "y": 451.00001525878906,
+        "wires": [
+            [
+                "22e339e0.e7f3b6"
+            ]
+        ]
+    },
+    {
+        "id": "5bafe031.eb1",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 180.0000457763672,
+        "y": 631.0000152587891,
+        "wires": [
+            [
+                "b03a5e83.eb261"
+            ]
+        ]
+    },
+    {
+        "id": "a47b1a09.e66b18",
+        "type": "debug",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 630.0000457763672,
+        "y": 611.0000152587891,
+        "wires": []
+    },
+    {
+        "id": "b03a5e83.eb261",
+        "type": "exec",
+        "z": "ce7111bb.10b11",
+        "command": "sudo reboot",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 420.0000457763672,
+        "y": 631.0000152587891,
+        "wires": [
+            [
+                "a47b1a09.e66b18"
+            ],
+            [
+                "a47b1a09.e66b18"
+            ],
+            [
+                "a47b1a09.e66b18"
+            ]
+        ]
+    },
+    {
+        "id": "944500ed.6d0e9",
+        "type": "mqtt in",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "adrszLD",
+        "qos": "0",
+        "broker": "cc7666e8.0ee838",
+        "x": 590.0000457763672,
+        "y": 571.0000152587891,
+        "wires": [
+            [
+                "229beca9.1e1a44",
+                "d9b70377.e7b72"
+            ]
+        ]
+    },
+    {
+        "id": "1558ade1.5969c2",
+        "type": "debug",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 940.0000457763672,
+        "y": 571.0000152587891,
+        "wires": []
+    },
+    {
+        "id": "229beca9.1e1a44",
+        "type": "delay",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 770.0000457763672,
+        "y": 571.0000152587891,
+        "wires": [
+            [
+                "1558ade1.5969c2"
+            ]
+        ]
+    },
+    {
+        "id": "d9b70377.e7b72",
+        "type": "debug",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 780.0000457763672,
+        "y": 531.0000152587891,
+        "wires": []
+    },
+    {
+        "id": "94a56f72.6c092",
+        "type": "comment",
+        "z": "ce7111bb.10b11",
+        "name": "zeroone 共通仕様",
+        "info": "電源制御機能\n\n・ＳＷ１：シャットダウンスイッチ：GPIO06（pin31）にスイッチを接続し、プルアップ（10ＫΩ：3.3Ｖ）\n\n　　　　　ラズハ゜イのプログラムで制御\n\n・ＳＷ２：再起動スイッチ：ラズハ゜イの“ＲＵＮ”書いてある端子に接続、プルアップ（10ＫΩ：3.3Ｖ）\n\n・ＬＥＤ１（緑）：状態確認表示：GPIO26（pin37）に接続、アクティブ・ロー\n\n　　　　ラズハ゜イのプログラムで制御、１秒周期の点滅",
+        "x": 182.0187530517578,
+        "y": 767.0250244140625,
+        "wires": []
+    },
+    {
+        "id": "f4f9590d.ecdb08",
+        "type": "comment",
+        "z": "ce7111bb.10b11",
+        "name": "ＳＷ１：シャットダウンスイッチ：GPIO06（pin31）",
+        "info": "",
+        "x": 363.0187530517578,
+        "y": 806.0250244140625,
+        "wires": []
+    },
+    {
+        "id": "cd126ce6.ca594",
+        "type": "comment",
+        "z": "ce7111bb.10b11",
+        "name": "ＳＷ２：再起動スイッチ：ラズハ゜イの“ＲＵＮ”",
+        "info": "",
+        "x": 332.0187530517578,
+        "y": 967.0250244140625,
+        "wires": []
+    },
+    {
+        "id": "254aca9f.abcb76",
+        "type": "comment",
+        "z": "ce7111bb.10b11",
+        "name": "ＬＥＤ１（緑）：状態確認表示：GPIO26（pin37）",
+        "info": "",
+        "x": 333.0187530517578,
+        "y": 1006.0250244140625,
+        "wires": []
+    },
+    {
+        "id": "d87f78f4.bab728",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 203.0187530517578,
+        "y": 1066.0250244140625,
+        "wires": [
+            [
+                "ec68fb7e.191f98"
+            ]
+        ]
+    },
+    {
+        "id": "ec68fb7e.191f98",
+        "type": "trigger",
+        "z": "ce7111bb.10b11",
+        "op1": "0",
+        "op2": "1",
+        "op1type": "num",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 383.0187530517578,
+        "y": 1106.0250244140625,
+        "wires": [
+            [
+                "fd3fae74.0c261"
+            ]
+        ]
+    },
+    {
+        "id": "fd3fae74.0c261",
+        "type": "rpi-gpio out",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "pin": "37",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 573.0187530517578,
+        "y": 1146.0250244140625,
+        "wires": []
+    },
+    {
+        "id": "ca6dae8d.d7364",
+        "type": "exec",
+        "z": "ce7111bb.10b11",
+        "command": "sudo halt",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 472.0187530517578,
+        "y": 847.0250244140625,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "503c0d0b.0f5714",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 233.0187530517578,
+        "y": 846.0250244140625,
+        "wires": [
+            [
+                "ca6dae8d.d7364"
+            ]
+        ]
+    },
+    {
+        "id": "78426058.a2d34",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 172.0187530517578,
+        "y": 1187.0250244140625,
+        "wires": [
+            [
+                "c10fb527.f12f48"
+            ]
+        ]
+    },
+    {
+        "id": "c10fb527.f12f48",
+        "type": "trigger",
+        "z": "ce7111bb.10b11",
+        "op1": "0",
+        "op2": "1",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "250",
+        "extend": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 352.0187530517578,
+        "y": 1187.0250244140625,
+        "wires": [
+            [
+                "fd3fae74.0c261"
+            ]
+        ]
+    },
+    {
+        "id": "1932715c.93072f",
+        "type": "exec",
+        "z": "ce7111bb.10b11",
+        "command": "sudo reboot",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 482.0187530517578,
+        "y": 907.0250244140625,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "41f88fcf.917f4",
+        "type": "inject",
+        "z": "ce7111bb.10b11",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 233.0187530517578,
+        "y": 906.0250244140625,
+        "wires": [
+            [
+                "1932715c.93072f"
+            ]
+        ]
+    },
+    {
+        "id": "99fe4b25.3d3408",
+        "type": "link in",
+        "z": "ce7111bb.10b11",
+        "name": "led_on",
+        "links": [
+            "1560ead8.55a005",
+            "20ca7777.49bbd8"
+        ],
+        "x": 207.0187530517578,
+        "y": 1247.0250244140625,
+        "wires": [
+            [
+                "c10fb527.f12f48"
+            ]
+        ]
+    },
+    {
+        "id": "d48cadfd.caa6a",
+        "type": "mosca in",
+        "z": "ce7111bb.10b11",
+        "mqtt_port": 1883,
+        "mqtt_ws_port": 8080,
+        "name": "",
+        "username": "",
+        "password": "",
+        "dburl": "",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "fcb0ecd8.9bf2a"
+            ]
+        ]
+    },
+    {
+        "id": "fcdbb233.6b884",
+        "type": "comment",
+        "z": "ce7111bb.10b11",
+        "name": "adrszLD　NODE-REDサンプルソフト",
+        "info": "adrszLD　のインストール\n\nadrszLD基板は、インターフェイスがａｄａｆｒｕｉｔのＳＳＤ1306ｏｌｅｄモジュールと\n互換性があります。\nadafruitのライブラリをインストールします。\n下記に、基本的な手順を示します。\n\n1.os関係のインストール確認\n　ＯＳは、下記で動作確認、日本語環境、Ｉ２Ｃ、ＳＰＩインターフェイス許可　　\n　　　　2018-06-27-raspbian-stretch.zip\n　2018年8月時点で、最新版にして、基本モジュールをインストール\n　  sudo apt-get update\n    sudo apt-get install python-pip python3-pip\n\n２．node-redの最新版をインストール\n    bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)\n    #node-redを自動起動\n    sudo systemctl enable nodered.service \n    sudo reboot\n    #node-redにMQTTブローカをインストール\n    ＃パレットの管理→ノードを追加→moscaを検索→ノードを追加\n    sudo reboot\n\n3.adrszLD用のｐｙｔｈｏｎライブラリのインストール\n＃adrszLD基板は、インターフェイスがａｄａｆｒｕｉｔのＳＳＤ1306ｏｌｅｄモジュールと互換性があります。\n＃adafruitのライブラリをインストールします。\n    git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git\n    cd Adafruit_Python_SSD1306/\n    sudo python3 setup.py install\n    cd\n    git clone https://github.com/eclipse/paho.mqtt.python\n    cd paho.mqtt.python\n    sudo python3 setup.py install\n    cd\n#日本語を表示するために、下記”takaoフォント”をインストール\n    sudo apt-get install fonts-takao\n\n４．サンプルソフト（adrszLD-SSD1306SPI-mqtt.py）をダウンロード\nサンプルソフトの仕様は下記\n#　　　入力：localhostのＭＱＴＴブローカから、TOPIC：adrszLDで文字列入力\n#　　　出力：ＭＱＴＴで入力した文字列を、自動スクロール４行で表示\n♯   必要により権限を付加\n    sudo chmod 777 *\n#   サンプルソフトを実行、初期表示文字が表示されることを確認、停止はコントロールC\n    sudo python3 adrszLD-SSD1306SPI-mqtt.py\n\n",
+        "x": 270,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2781dde.7400022",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "cc7666e8.0ee838",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
