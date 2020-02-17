@@ -2,7 +2,7 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszod/)*
 
-ADRSZOD基板は、GPSモジュールが実装され、ラズパイzeroとは、GPIOシリアルで接続されています。
+ADRSZOD基板は、臭気センサが実装され、ラズパイzeroとは、GPIOシリアルで接続されています。
 
 下記に、基本的なインストール手順を示します。
 
