@@ -86,7 +86,7 @@ sudo python /home/pi/zeroone/5_1adrszCS/adrszCS_CSmode_sample.py
 #　　　出力：ＨＳＶ値
 ```
 
-## 5.ＮＯＤＥ－ＲＥＤのサンプルソフト（adrszCS_sample****.json）を、ＮＯＤＥ－０ＲＥＤにコピー
+## 5.ＮＯＤＥ－ＲＥＤのサンプルソフト（adrszCS_sample****.json）を、ＮＯＤＥ－ＲＥＤにコピー
 
 サンプルソフトの仕様は下記
 
