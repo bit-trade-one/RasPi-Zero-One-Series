@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszre)*
 
+### *回路図は[こちら](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/1st/ADRSZRE_Rotary_Encoder/rpizero_encoder_v11_schematics.pdf)*
+
 ## サンプルスクリプト ADRSZRE_Sample.pyについて  
 
 このスクリプトは、ADRSZRE ゼロワンエンコーダ拡張基板専用 エンコーダ値読み取りサンプルプログラムです。  
