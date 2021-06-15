@@ -24,3 +24,5 @@
 ### A: TP-401Tを搭載しております。
 
 データシートはこちらにございます。 https://btoshop.jp/products/b01821?_pos=3&_sid=437decf23&_ss=r  
+
+詳細は回路図をご確認ください。
