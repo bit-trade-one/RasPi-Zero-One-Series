@@ -170,8 +170,9 @@ class GYRO:
         self.__ac_conf = ac_conf
         self.__gr_conf = gr_conf
 
-        if i2c.read_byte_data(ADDR, WHO_AM_I) != 0x73:
-            return
+        i2c.read_byte_data(ADDR, WHO_AM_I)
+        #if i2c.read_byte_data(ADDR, WHO_AM_I) != 0x73:
+        #    return
 
         i2c.write_byte_data(ADDR, PWR_MGMT_1, 0x00)
         i2c.write_byte_data(ADDR, INT_PIN_CFG, 0x02)
