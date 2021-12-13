@@ -30,3 +30,13 @@
 ### Encoder_Reset()
 
 エンコーダカウント数を0にリセットします。
+
+## 基板ファームウェア RasPiZero_EncoderFirmware_20180511.zip について
+
+このファームウェアは以下の環境で開発しています。  
+
+ - MPLAB IDE v8.92
+ - MPLIB Librarian v5.00
+ - MPLAB C18 Compiler v3.47
+ - MPLINK Object Linker v5.00
+ - MPASM Assembler v5.54
