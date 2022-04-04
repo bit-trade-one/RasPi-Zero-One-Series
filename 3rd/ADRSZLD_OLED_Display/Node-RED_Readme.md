@@ -66,7 +66,7 @@ I2C・SPIインタフェースは、あらかじめraspi-configで許可した�
 ### Mosquitto(MQTT Broker)のインストール  
 
 本サンプルソフトを動作させるには、Publisher（発信者）が必要となります。あらかじめMosquittoをインストールしてください。  
-詳細は、http://mosquitto.org/blog/2013/01/mosquitto-debian-repository/を参照してください。
+詳細は、http://mosquitto.org/blog/2013/01/mosquitto-debian-repository/ を参照してください。
 
 ### GPG鍵のインストール
 ```sh
