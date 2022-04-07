@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszup/)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/4th/ADRSZUP_Capacitor/Schematics/rpizero_ups_v12_schematics.pdf)
+
 ## 本製品について
 
 本製品はRaspberry Pi Zeroに装着し、通常時に電荷を蓄積することで  
