@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszirr)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/2nd/ADRSZIRR_IR_Receiver/Schematics/rpizero_irtrx_v2_schematics.pdf)
+
 ## 1.lircの設定
 
 最初に、Linuxの純正赤外線受信ライブラリ”lirc”をインストールします。  
