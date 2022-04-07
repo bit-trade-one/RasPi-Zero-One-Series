@@ -1,4 +1,4 @@
-# adrszLD-ゼロワン OLED拡張基板
+# adrszLD-ゼロワン OLED拡張基板 RaspberryPI OS 32bit Bullseye版
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszld)*
 
