@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszsb)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/1st/ADRSZSB_Servo_Motor/Schematics/rpizeroservo_v11_schematics.pdf)
+
 ## サンプルスクリプト ADRSZSB_Sample.pyについて  
 このスクリプトは、ADRSZSB ゼロワンサーボ拡張基板専用 サーボ制御サンプルプログラムです。  
 コマンドを受け付け、設定値に応じて2つのサーボモータの独立制御を行うことができます。  
