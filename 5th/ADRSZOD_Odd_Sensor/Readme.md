@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszod/)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/5th/ADRSZOD_Odd_Sensor/Schematics/rpizero_airsens_v1_schematics.pdf)
+
 ADRSZOD基板は、臭気センサが実装され、ラズパイzeroとは、GPIOシリアルで接続されています。
 
 Python,またNode-RED上での出力について、Ch1が臭気センサからの出力となります。  
