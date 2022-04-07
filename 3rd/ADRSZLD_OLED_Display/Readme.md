@@ -1,12 +1,14 @@
 # adrszLD-ゼロワン OLED拡張基板
 
+### *RaspberryPI OS 32bit Bullseyeを使用される場合は、[こちら](RaspberryPi_OS_Bullseye/Readme.md)を参照ください。*
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszld)*
 
 ## ファイルリスト
-- Readme.md  ［本文章］
+- Readme.md  ［本文書］
 - [Node-RED_Readme.md ［Node-REDを用いた作例です］](Node-RED_Readme.md)
 - adrszLD-SSD1306SPI-mqtt.py ［サンプルソフト］
 - adrszLD-node-sample.json ［ノードサンプル］
+- rpizero_display_v11_schematics.pdf[ [回路図](rpizero_display_v11_schematics.pdf)]
 
 
 ## 動作確認

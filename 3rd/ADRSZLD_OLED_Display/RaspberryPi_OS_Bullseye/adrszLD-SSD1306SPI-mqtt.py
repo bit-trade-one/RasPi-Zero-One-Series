@@ -20,10 +20,13 @@
 # 利用例：
 #  mosquitto_pub -h localhost -t adrszLD -m "メッセージ"
 #
-#
+# 来歴:　V00.01 2022/04/06 Circuitpython用に変更
 
-import Adafruit_GPIO.SPI as SPI
-import Adafruit_SSD1306
+#import Adafruit_GPIO.SPI as SPI
+#import Adafruit_SSD1306
+import board                #00.01
+import adafruit_ssd1306     #00.01
+import digitalio            #00.01
 
 from PIL import Image
 from PIL import ImageDraw
@@ -51,18 +54,28 @@ FONT_SIZE     =  14
 
 # TryeTypeフォントオブジェクト
 jpfont = ImageFont.truetype(DEFAULT_FONT, FONT_SIZE, encoding='unic')
+
 # SPIオブジェクト
-spi = SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=8000000)
+# spi = SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_hz=8000000)                  #00.01
+spi = board.SPI()                                                               #00.01
+oled_cs = digitalio.DigitalInOut(board.D8)                                      #00.01
+oled_reset = digitalio.DigitalInOut(board.D24)                                  #00.01
+oled_dc = digitalio.DigitalInOut(board.D23)                                     #00.01
+
 # 128×64ドットのOLEDオブジェクト
-disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=spi)
+# disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, dc=DC, spi=spi)                               #00.01
+disp = adafruit_ssd1306.SSD1306_SPI(OLED_WIDTH, OLED_HEIGHT, spi, oled_dc, oled_reset, oled_cs) #00.01
 
 # OLEDオブジェクトのスタート
-disp.begin()
+# disp.begin()                                                                                  #00.01
 
 # OLEDオブジェクトのバッファークリア
-disp.clear()
+# disp.clear()                                                                                  #00.01
+disp.fill(0)                                                                                    #00.01
+
 # バッファの表示
-disp.display()
+# disp.display()                                                                                #00.01
+disp.show()
 
 # 文字列の設定
 gyou = [ 'こんにちは',
@@ -85,7 +98,8 @@ def draw_gyou():
     # imageをOLEDバッファーに書き込む
     disp.image(image)
     # バッファーを表示
-    disp.display()
+    # disp.display()                                                                            #00.01
+    disp.show()                                                                                 #00.01
 
 ## MQTT
 
