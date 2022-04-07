@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszhb/)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/4th/ADRSZHB_USB_HUB/Schematics/rpizero_hub_v11_schematics.pdf)
+
 本基板は、usb2.0のｈｕｂと互換性があります。  
 
 下記に、基本的な使い方を示します。  
