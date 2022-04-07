@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszsn)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/1st/ADRSZSN_Solenoid/Schematics/rpizero_solenoid_v11_schematics.pdf)
+
 バージョン：2018/6/20 v1.0  python3用  
 
 ビット・トレード・ワン社提供のzerooneシリーズ ソレノイドモジュール(型番：ADRSZSN)用の例題プログラム  
