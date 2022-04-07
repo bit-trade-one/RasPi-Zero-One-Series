@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszsw)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/2nd/ADRSZSW_Illuminated_Switch/Schematics/rpizero_wallsw_v2_schematics.pdf)
+
 ビット・トレード・ワン社提供のzerooneシリーズ 照光スイッチ(型番：ADRSZSW)用の例題プログラム
 著作権者:(C) 2015 ビット・トレード・ワン社
 ライセンス: ADL(Assembly Desk License)
