@@ -8,7 +8,7 @@
 - [Node-RED_Readme.md ［Node-REDを用いた作例です］](Node-RED_Readme.md)
 - adrszLD-SSD1306SPI-mqtt.py ［サンプルソフト］
 - adrszLD-node-sample.json ［ノードサンプル］
-- rpizero_display_v11_schematics.pdf[ [回路図](Schematics/rpizero_display_v11_schematics.pdf)]
+- [rpizero_display_v11_schematics.pdf[回路図]](Schematics/rpizero_display_v11_schematics.pdf)
 
 
 ## 動作確認
