@@ -3,6 +3,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/product/module/adrszlx)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/2nd/ADRSZLX_Luminance_Sensor/Schematics/rpizero_light_schematics.pdf)
+
 バージョン：2018/6/8 v1.0  python3用  
 
 ビット・トレード・ワン社提供のzerooneシリーズ 明るさセンサモジュール(型番：ADRSZLX)用の例題プログラム  
