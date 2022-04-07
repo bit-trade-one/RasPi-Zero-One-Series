@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszgr)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/3rd/ADRSZGR_9-Axis_Gyro/Schematics/rpizero_motion_V101_schematics.pdf)
+
 ## サンプルスクリプト ADRSZGR_Sample.pyについて  
 このスクリプトは、ADRSZGR ゼロワン9軸センサ拡張基板専用 サンプルプログラムです。  
 0.05秒間隔で9軸センサの値と、1ステップの経過時間を表示します。  
