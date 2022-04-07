@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszgp/)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/4th/ADRSZGP_GPS/Schematics/ADRSZGP_v11_schematics.pdf)
+
 adrszGP基板は、GPSモジュールが実装され、ラズハ゜イｚｅｒｏとは、ＧＰＩＯ　シリアルで接続されています。  
 
 
