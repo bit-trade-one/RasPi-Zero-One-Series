@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszel/)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/5th/ADRSZEI_Electric_Paper/Schematics/ADRSZEI_v1_schematics.pdf)
+
 下記に、基本的な手順を示します。  
 
 ## 1. os関係のインストール確認
