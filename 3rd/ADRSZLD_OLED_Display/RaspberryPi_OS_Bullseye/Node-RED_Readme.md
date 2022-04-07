@@ -1,4 +1,4 @@
-# Node-REDを用いた作例
+# Node-REDを用いた作例 RaspberryPI OS 32bit Bullseye版
 本サンプルソフトの実行には、Node-REDとMQTTの基本知識が必要となります。  
 以下に注意点・補足事項を記載します。  
 
