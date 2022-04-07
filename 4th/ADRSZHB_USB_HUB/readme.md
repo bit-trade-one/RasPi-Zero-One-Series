@@ -1,4 +1,4 @@
-# adrszＨＢ　USB-HUB　の使い方
+# adrszHB　USB-HUB　の使い方
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszhb/)*
 
