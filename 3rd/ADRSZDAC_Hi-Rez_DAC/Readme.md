@@ -1,6 +1,8 @@
 # ADRSZDAC ラズパイハイレゾDAC説明書
 
-### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszdac)*
+### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszdac)*.
+
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/3rd/ADRSZDAC_Hi-Rez_DAC/Schematics/rpizero_dac_v101_schematics.pdf)
 
 ### 初期セットアップ方法
 
