@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszcs/)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/5th/ADRSZCS_Color_Sensor/Schematics/rpizero_color_v21_schematics.pdf)
+
 この基板の仕様は以下のとおりです。  
 
 |||  
