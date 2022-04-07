@@ -2,6 +2,8 @@
 
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszcm/)*
 
+### [回路図](https://github.com/bit-trade-one/RasPi-Zero-One-Series/blob/master/4th/ADRSZCM_Clamp_Meter/Schematics/rpizero_clamp_v11_schematics.pdf)
+
 本基板は、インターフェイスがadafluitのAdafruit_Python_ADS1x15モジュールと互換性があります。  
 adafruitのライブラリをインストールします。  
 下記に、基本的な手順を示します。  
