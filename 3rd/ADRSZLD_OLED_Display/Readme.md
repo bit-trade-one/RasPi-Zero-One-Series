@@ -1,6 +1,7 @@
 # adrszLD-ゼロワン OLED拡張基板
 
-### *RaspberryPI OS 32bit Bullseyeを使用される場合は、[こちら](RaspberryPi_OS_Bullseye/Readme.md)を参照ください。*
+### 【推奨】*RaspberryPI OS 32bit Bullseyeを使用される場合は、[こちらのサンプル](RaspberryPi_OS_Bullseye/Readme.md)を参照ください。*
+
 ### *製品ページは[こちら](http://bit-trade-one.co.jp/adrszld)*
 
 ## ファイルリスト
