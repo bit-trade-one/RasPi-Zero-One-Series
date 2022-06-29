@@ -1,0 +1,363 @@
+[
+    {
+        "id": "9ccf766348d578de",
+        "type": "tab",
+        "label": "ADRSZGP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5a5249c7.25ba68",
+        "type": "serial in",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "serial": "2e9f08ab.e6c55",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "5bbe881a.b93848",
+                "bd5c9f6a.755808"
+            ]
+        ]
+    },
+    {
+        "id": "f6bf4a1e.5d46a8",
+        "type": "debug",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5bbe881a.b93848",
+        "type": "switch",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "GPGGA",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "GPGSA",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "GPGSV",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "GPRMC",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "GPVTG",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "PGTOP",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "6c9c8ae4.cb2f84",
+                "c5802c31.e600d"
+            ],
+            [
+                "329dbe9e.be7662"
+            ],
+            [
+                "329dbe9e.be7662"
+            ],
+            [
+                "329dbe9e.be7662"
+            ],
+            [
+                "329dbe9e.be7662"
+            ],
+            [
+                "248ebd6c.da7b1a"
+            ]
+        ]
+    },
+    {
+        "id": "248ebd6c.da7b1a",
+        "type": "debug",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6c9c8ae4.cb2f84",
+        "type": "split",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "ab37990.8186c68"
+            ]
+        ]
+    },
+    {
+        "id": "ab37990.8186c68",
+        "type": "join",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 640,
+        "y": 100,
+        "wires": [
+            [
+                "6e5fe7e6.244f5",
+                "53a24029.5a592"
+            ]
+        ]
+    },
+    {
+        "id": "6e5fe7e6.244f5",
+        "type": "function",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "func": "var latdeg = parseInt(msg.payload[2].slice(0,2),10);\nvar latsec = parseFloat(msg.payload[2].slice(2))/60;\nvar londeg = parseInt(msg.payload[4].slice(0,3),10);\nvar lonsec = parseFloat(msg.payload[4].slice(3))/60;\nvar lat = latdeg+latsec;\nvar lon = londeg+lonsec;\nflow.set('lat',lat);\nflow.set('lon',lon);\n//msg.payload = [lat,lon];\nmsg.payload = {\n    lat: lat,\n    lon: lon\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 100,
+        "wires": [
+            [
+                "f6bf4a1e.5d46a8",
+                "e7c928f93cbd6270"
+            ]
+        ]
+    },
+    {
+        "id": "53a24029.5a592",
+        "type": "debug",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "329dbe9e.be7662",
+        "type": "debug",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "c5802c31.e600d",
+        "type": "debug",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "bd5c9f6a.755808",
+        "type": "debug",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3668bac9e89846d3",
+        "type": "worldmap",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "lat": "35.557645",
+        "lon": "139.35715",
+        "zoom": "15",
+        "layer": "OSMC",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,RW,TL,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1140,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e7c928f93cbd6270",
+        "type": "function",
+        "z": "9ccf766348d578de",
+        "name": "PlotToMap",
+        "func": "msg.payload = {\n    lat : msg.payload.lat,\n    lon: msg.payload.lon,\n    name: \"ADRSZGP_TEST\",\n    icon: \"globe\",\n    iconColor: \"red\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 220,
+        "wires": [
+            [
+                "3668bac9e89846d3",
+                "c22a5c66e59616da",
+                "499cda426f07c846"
+            ]
+        ]
+    },
+    {
+        "id": "c22a5c66e59616da",
+        "type": "debug",
+        "z": "9ccf766348d578de",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "499cda426f07c846",
+        "type": "function",
+        "z": "9ccf766348d578de",
+        "name": "MoveTo",
+        "func": "msg.payload = {\n    command: {\n        lat : msg.payload.lat,\n        lon: msg.payload.lon,\n//        zoom: 18\n    }\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 340,
+        "wires": [
+            [
+                "3668bac9e89846d3"
+            ]
+        ]
+    },
+    {
+        "id": "2e9f08ab.e6c55",
+        "type": "serial-port",
+        "serialport": "/dev/serial0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "false",
+        "responsetimeout": "10000"
+    }
+]
