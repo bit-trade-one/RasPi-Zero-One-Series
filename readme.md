@@ -12,6 +12,9 @@
 |第3弾</br>(18/9/21 発売)|[ADRSZGR</br>9軸センサ](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/3rd/ADRSZGR_9-Axis_Gyro)|[ADRSZIRS</br>赤外線リモコン](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/3rd/ADRSZIRS_IR_Sender)|[ADRSZLD</br>OLED](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/3rd/ADRSZLD_OLED_Display)|[ADRSZDAC</br>ハイレゾDAC](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/3rd/ADRSZDAC_Hi-Rez_DAC)||
 |第4弾</br>(18/12/21 発売)|[ADRSZHB</br>USBハブ](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/4th/ADRSZHB_USB_HUB)|[ADRSZGP</br>GPSモジュール](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/4th/ADRSZGP_GPS)|[ADRSZUP</br>電源保持基板](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/4th/ADRSZUP_Capacitor)|[ADRSZCM</br>クランプメータ](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/4th/ADRSZCM_Clamp_Meter)||
 |第5弾</br>(19/2/22 発売)|[ADRSZOD</br>臭気センサ](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/5th/ADRSZOD_Odd_Sensor)|[ADRSZEI</br>電子ペーパーモジュール](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/5th/ADRSZEI_Electric_Paper)|[ADRSZCS</br>カラーセンサ](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/5th/ADRSZCS_Color_Sensor)|||
+|第6弾</br>(2024 発売予定)|[ADRSZHB2</br>USB拡張ハブ](https://github.com/bit-trade-one/RasPi-Zero-One-Series/tree/master/6th/ADRSZHB2_USB_HUB)|||||
+
+
 
 ![GPIO対応表](http://bit-trade-one.co.jp/wp/wp-content/uploads/2019/07/image-2.png)
 
