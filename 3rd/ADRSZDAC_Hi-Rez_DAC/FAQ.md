@@ -19,7 +19,7 @@ dtparam=i2s=on
 # HDMIへのオーディオ出力をOFFにする場合、以下の行を追加する
 dtoverlay=vc4-kms-v3d,noaudio
 
-# 搭載するDACに応じてどちらかを記載してください
+# 搭載するDACに応じてどちらかを追加してください
 # ADRSZDACの場合
 dtoverlay=hifiberry-dacplus-std,24db_digital_gain
 
