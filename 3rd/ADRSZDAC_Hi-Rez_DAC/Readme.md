@@ -13,6 +13,8 @@
 本動作確認は「RaspberryPI OS 32bit Bullseye 2022-04-04 Release」をイントールした後、2022年5月時点で最新版にupgradeした状態で実行しております。  
 I2C・SPIインタフェースは、あらかじめraspi-configで許可した状態です。 
 
+※ Raspberry Pi 5を使用される場合は、FAQを参照してください。
+
 ## 初期セットアップ方法
 
  1. /boot/config.txtに、以下の行を追記します。 
